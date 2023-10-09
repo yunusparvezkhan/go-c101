@@ -1,5 +1,5 @@
 # go-c001
-### Rrpository Introduction
+### Repository Introduction
 This repository contains all the notes and practical work in Go by me, following a course in YouTube by freeCodeCamp YouTube channel. To see the course click [here](https://www.youtube.com/watch?v=un6ZyFkqFKo).
 
 ## Go Programming
@@ -8,3 +8,10 @@ Go is a statically typed, compiled high-level programming language designed at G
 
 ### Usecases of Go
 Go is a high-level programming language, which means that it is very human readable and not complex. Because it is a compiled programming language it can be used to build programs for operating systems that are supported by Go. Mostly Go is used for server-side programs in the industry, but that doesn't mean that it can not create client-side applications.
+
+### Advantages of Go
+Go comes with many advantages over other languages to program softwares.
+
+1. Go is statically types
+    
+    - 
