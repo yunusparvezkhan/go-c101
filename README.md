@@ -15,3 +15,7 @@ Go comes with many advantages over other languages to program softwares.
 1. Go is statically types
     
     - That means that Go requires it's programmers to declare the data type of a variable when declaring it. Many programmer likes this way because, it prevents accidental changing of the data type later during any value assignment. Many programmers however do like the automatic data type feature. But it is a advantage in Go that it requires declaration of data types, as this kind of programming languages are usually more efficient in runtime.
+
+1. Go is a compiled programming language
+
+    - Compiled programming langage means that after the development of the app in the particular dev environment, a piece of software called as compiler, compiles the code into an executable file for that operating system. This executable file has no dependency and can run only on it's own and it is usually encrypted as well. This kind of programming languages are usually faster, more efficient and more secure as well.
