@@ -14,4 +14,4 @@ Go comes with many advantages over other languages to program softwares.
 
 1. Go is statically types
     
-    - 
+    - That means that Go requires it's programmers to declare the data type of a variable when declaring it. Many programmer likes this way because, it prevents accidental changing of the data type later during any value assignment. Many programmers however do like the automatic data type feature. But it is a advantage in Go that it requires declaration of data types, as this kind of programming languages are usually more efficient in runtime.
