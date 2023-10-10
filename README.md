@@ -19,3 +19,7 @@ Go comes with many advantages over other languages to program softwares.
 1. Go is a compiled programming language
 
     - Compiled programming langage means that after the development of the app in the particular dev environment, a piece of software called as compiler, compiles the code into an executable file for that operating system. This executable file has no dependency and can run only on it's own and it is usually encrypted as well. This kind of programming languages are usually faster, more efficient and more secure as well.
+
+1. High Level Programming Language
+
+    - This point might sound like it is a disadvantage, because high level programming languages are usually slower than that of low level programming languages. But in the case of Go, it seems like it does not has that much of a problem being a high level programming language, added to that as a high level language it is has a very simple and human friendly syntax
