@@ -54,3 +54,26 @@ There are mainly 6 types of data in Go.
 - float64
 - complex64 (for complex numbers)
 - complex128 (for complex numbers)
+
+### Declaring Variables & Constants
+#### Declaring Variables
+For declaring any variables in Go, the declaration keyword is written at the first followed by the name for the variable and at last the data type following by a equal sign `=` and the value of the variable.
+
+```go
+    var abc string = "some string";
+    var sonkha int = 8;
+```
+
+#### Declaring Variables with auto data types
+Go provides a very unique and helpful feature that automatically assigns the data type by analyzing it. To use this feature first declare the `var` keyword, then the name of the variable followed by a colon & equal sign and the value of the variable,
+
+```go
+    var abc := "some string";
+```
+
+#### Declaring Constants
+Declaring const does not need to mention any data types, as this is a immutable data, so Go can automatically analyze and assign data type to it. To declare a constant write the `const` keyword followed by the name of the constant, a equal sign and the value of the constant.
+
+```go
+    const abc = "some string";
+```
