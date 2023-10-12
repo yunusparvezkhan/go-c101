@@ -27,3 +27,30 @@ Go comes with many advantages over other languages to program softwares.
 1. Less compilation time
 
     - The disadvantage of the compiled programming languages are that they take way too much time to compile and ready the executable file. On the other hand dependency dependent programming languages (aka interpreted languages) takes absolutely zero time to execute. Howevery being a compiled language Go does take a very very very little time to compile compared to other compiled counterparts.
+
+
+### Variables && Constants
+
+Variables are declared with the `var` keyword and, constants are declared with `const` keyword in Go.
+
+### Data Types
+There are mainly 6 types of data in Go.
+- int (integers)
+    - This is then further broken down into
+        - int8
+        - int16
+        - int32
+        - int64
+- uint (unsigned integrers (can't contain a minus sign))
+    - This is then further broken down into
+        - uint8
+        - uint16
+        - uint32
+        - uint64
+
+- string (for strings)
+- bool (boolean)
+- float32
+- float64
+- complex64 (for complex numbers)
+- complex128 (for complex numbers)
