@@ -65,10 +65,10 @@ For declaring any variables in Go, the declaration keyword is written at the fir
 ```
 
 #### Declaring Variables with auto data types
-Go provides a very unique and helpful feature that automatically assigns the data type by analyzing it. To use this feature first declare the `var` keyword, then the name of the variable followed by a colon & equal sign and the value of the variable,
+Go provides a very unique and helpful feature that automatically assigns the data type by analyzing it. To use this feature first declare the name of the variable followed by a colon & equal sign and the value of the variable,
 
 ```go
-    var abc := "some string";
+    abc := "some string";
 ```
 
 #### Declaring Constants
