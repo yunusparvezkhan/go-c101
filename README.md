@@ -77,3 +77,34 @@ Declaring const does not need to mention any data types, as this is a immutable 
 ```go
     const abc = "some string";
 ```
+
+### Functions
+Functions in Go are declared with the `func` keyword follwed by the desired name of the function, which should be attached with prenthesis `()`, the prenthesis should be passed with the parameters that the function accept along with their data types mentioned after them. After the prenthesis the data type of the output should be mentioned and the curly braces should start, which will contain all the logics.
+#### Returning one value
+
+```go
+func Hello(name string) string {
+    return fmt.Sprintf("Hello %s", name)
+}
+```
+
+#### Returning multiple values
+```go
+func Math(firstNum, secondNum int) (addition, subtraction, multiple, divition int) {
+    addition = firstNum + secondNum
+    subtraction = firstNum - secondNum
+    multiple = firstNum * secondNum
+    divition = firstNum / secondNum
+    return
+}
+```
+or
+```go
+func Math(firstNum, secondNum int) (int, int, int, int) {
+    return
+    firstNum + secondNum,
+    firstNum - secondNum,
+    firstNum * secondNum,
+    firstNum / secondNum,
+}
+```
