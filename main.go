@@ -12,7 +12,7 @@ func Hello(name string) string {
 	return message
 }
 
-func divide(divident, divisor int) (int, error) {
+func divide(divident, divisor float32) (float32, error) {
 	if divisor == 0 {
 		return 0, errors.New("cant devide by zero! Didn't you attend primary school?")
 	}
@@ -20,7 +20,7 @@ func divide(divident, divisor int) (int, error) {
 }
 
 func main() {
-	output, err := divide(10, 0)
+	output, err := divide(10, 3)
 
 	fmt.Println(output)
 	if err != nil {
