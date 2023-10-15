@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 )
 
@@ -12,19 +11,20 @@ func Hello(name string) string {
 	return message
 }
 
-func divide(divident, divisor float32) (float32, error) {
+func divide(divident, divisor float32) (float32, string) {
 	if divisor == 0 {
-		return 0, errors.New("cant devide by zero! Didn't you attend primary school?")
+		return 0, "cant devide by zero! Didn't you attend primary school?"
 	}
-	return divident / divisor, nil
+	return divident / divisor, ""
 }
 
 func main() {
-	output, err := divide(10, 3)
+	output, err := divide(10, 0)
 
-	fmt.Println(output)
-	if err != nil {
-		fmt.Println(err)
+	if err != "" {
+		fmt.Println("Error dividing values:", err)
+	} else {
+		fmt.Println(output)
 	}
 
 }
