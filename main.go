@@ -17,11 +17,13 @@ func divide(divident, divisor float32) (float32, string) {
 }
 
 func main() {
-	output, err := divide(10, 0)
+	// output, err := divide(10, 0)
 
-	if err != "" {
-		fmt.Println("Error dividing values:", err)
-	} else {
-		fmt.Println(output)
-	}
+	// if err != "" {
+	// 	fmt.Println("Error dividing values:", err)
+	// } else {
+	// 	fmt.Println(output)
+	// }
+
+	Struct_main()
 }
