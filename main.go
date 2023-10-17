@@ -17,7 +17,7 @@ func divide(divident, divisor float32) (float32, string) {
 }
 
 func main() {
-	output, err := divide(10, 0)
+	output, err := divide(138, 2)
 
 	if err != "" {
 		fmt.Println("Error dividing values:", err)
