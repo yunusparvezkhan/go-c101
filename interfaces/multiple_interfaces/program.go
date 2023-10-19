@@ -7,9 +7,9 @@ import (
 func (e email) cost() float64 {
 	// ?
 	var costPerCharecter float64
-	if e.isSubscribed == false {
+	if !e.isSubscribed {
 		costPerCharecter = 0.05
-	} else if e.isSubscribed == true {
+	} else if e.isSubscribed {
 		costPerCharecter = 0.01
 	}
 	return costPerCharecter * float64(len(e.body))
