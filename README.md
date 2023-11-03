@@ -110,4 +110,4 @@ func Math(firstNum, secondNum int) (int, int, int, int) {
 ```
 
 #### Methods
-As like other programming languages, Go also has pretty good amount of useful methods. I can not mention all of them as I am only learning and taking notes. Please checkout the official docs or other popular docs on Go to learn more about methods in Go.
+As like other programming languages, Go also has a pretty good amount of useful methods. I can not mention all of them as I am only learning and taking notes. Please check out the official docs or other popular docs on Go to learn more about methods in Go.
