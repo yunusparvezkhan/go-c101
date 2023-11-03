@@ -109,5 +109,45 @@ func Math(firstNum, secondNum int) (int, int, int, int) {
 }
 ```
 
-#### Methods
+### Pre-defined Methods
 As like other programming languages, Go also has a pretty good amount of useful methods. I can not mention all of them as I am only learning and taking notes. Please check out the official docs or other popular docs on Go to learn more about methods in Go.
+
+### Custom Methods
+
+In Go, a method is a function associated with a specific type, which is known as the receiver. A method is defined with the receiver between the `func` keyword and the method name.
+
+```go
+type Rect struct {
+    width  float64
+    height float64
+}
+
+// Area method for Rect
+func (r Rect) Area() float64 {
+    return r.width * r.height
+}
+
+```
+
+In the above example, `Area` is a method of type `Rect`. To call it, we need to have a `Rect` instance.
+
+```go
+r := Rect{width: 3, height: 4}
+fmt.Println(r.Area()) // output: 12
+
+```
+
+It's important to note that there are two types of method receivers: value receivers and pointer receivers. In the `Area` method example, `Rect` is a value receiver, meaning the method receives a copy of the `Rect` value. It can't modify the original `Rect` that we used to call the method.
+
+If we want to modify the original receiver, we can use a pointer receiver.
+
+```go
+func (r *Rect) SetWidth(w float64) {
+    r.width = w
+}
+
+```
+
+In this case, `SetWidth` is a method with a pointer receiver. When we call `r.SetWidth(5)`, the method will modify the original `Rect`'s width.
+
+Methods in Go allow us to apply object-oriented programming principles, providing a way to bundle related behavior with the data it operates on.
