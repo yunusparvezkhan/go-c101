@@ -151,3 +151,55 @@ func (r *Rect) SetWidth(w float64) {
 In this case, `SetWidth` is a method with a pointer receiver. When we call `r.SetWidth(5)`, the method will modify the original `Rect`'s width.
 
 Methods in Go allow us to apply object-oriented programming principles, providing a way to bundle related behavior with the data it operates on.
+
+## Structs
+
+Structs in Go provide a means to group related data together, forming the backbone of much of Go's data handling. They are akin to classes in object-oriented programming languages, although there are some key differences.
+
+A struct is defined with the `type` keyword, followed by the name of the struct, the `struct` keyword, and a set of fields enclosed in curly braces. Each field has a name and a type. For example, we could define a struct to represent a person like this:
+
+```go
+type Person struct {
+    Name string
+    Age  int
+}
+
+```
+
+To create an instance of a struct, we use the struct name followed by the values for the fields in the order they were defined, enclosed in curly braces:
+
+```go
+p := Person{"Arpita", 19}
+
+```
+
+You can also create a struct by specifying the field names:
+
+```go
+p := Person{Name: "Yunus", Age: 20}
+
+```
+
+Struct fields are accessed using a dot:
+
+```go
+fmt.Println(p.Name) // output: Alice
+
+```
+
+One unique feature of Go's structs is the ability to embed other structs. This is Go's way of providing something akin to inheritance in object-oriented programming. An embedded struct means that its fields become part of the outer struct. For example:
+
+```go
+type Employee struct {
+    Person
+    Position string
+}
+
+e := Employee{Person: Person{"YP Khan", 20}, Position: "Engineer"}
+fmt.Println(e.Name) // output: Bob
+
+```
+
+In this example, `Employee` embeds `Person`, so all the fields of `Person` are accessible as if they were directly declared in `Employee`.
+
+Overall, structs are a powerful and flexible way to handle data in Go, providing a simple, clear way to model your data and the relationships between data.
