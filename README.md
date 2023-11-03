@@ -57,7 +57,7 @@ There are mainly 6 types of data in Go.
 
 ### Declaring Variables & Constants
 #### Declaring Variables
-For declaring any variables in Go, the declaration keyword is written at the first followed by the name for the variable and at last the data type following by a equal sign `=` and the value of the variable.
+For declaring any variables in Go, the declaration keyword `var` is written first followed by the name of the variable, and then the data type followed by an equal sign `=` and the value of the variable.
 
 ```go
     var abc string = "some string";
