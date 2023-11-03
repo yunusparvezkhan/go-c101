@@ -72,7 +72,7 @@ Go provides a very unique and helpful feature that automatically assigns the dat
 ```
 
 #### Declaring Constants
-Declaring const does not need to mention any data types, as this is a immutable data, so Go can automatically analyze and assign data type to it. To declare a constant write the `const` keyword followed by the name of the constant, a equal sign and the value of the constant.
+Declaring const does not need to mention any data type, as this is immutable data, so Go can automatically check and assign a data type to it. To declare a constant write the `const` keyword followed by the name of the constant, an equal sign, and the value of the constant.
 
 ```go
     const abc = "some string";
