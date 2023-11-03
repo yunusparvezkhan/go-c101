@@ -79,7 +79,7 @@ Declaring const does not need to mention any data type, as this is immutable dat
 ```
 
 ### Functions
-Functions in Go are declared with the `func` keyword follwed by the desired name of the function, which should be attached with prenthesis `()`, the prenthesis should be passed with the parameters that the function accept along with their data types mentioned after them. After the prenthesis the data type of the output should be mentioned and the curly braces should start, which will contain all the logics.
+Functions in Go are declared with the `func` keyword followed by the desired name of the function, which should be attached with a parenthesis `()`, the parenthesis should be passed with the parameters that the function accepts or expects along with their data types mentioned after them. After the parenthesis the data type of the output should be mentioned and the curly braces should then start, which will contain all the logics.
 #### Returning one value
 
 ```go
