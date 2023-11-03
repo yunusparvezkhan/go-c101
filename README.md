@@ -203,3 +203,44 @@ fmt.Println(e.Name) // output: Bob
 In this example, `Employee` embeds `Person`, so all the fields of `Person` are accessible as if they were directly declared in `Employee`.
 
 Overall, structs are a powerful and flexible way to handle data in Go, providing a simple, clear way to model your data and the relationships between data.
+
+## Interfaces
+
+In Go, an interface is a set of method signatures. When a type provides definitions for all the methods in an interface, it is said to implement the interface. It provides a way to specify the behavior of an object: if something can do this, then it can be used here.
+
+Interfaces are declared with the `type` keyword, followed by the name of the interface and the `interface` keyword. The set of methods is listed in curly braces. For example:
+
+```go
+type Printer interface {
+    Print(string)
+}
+
+```
+
+In this example, `Printer` is an interface that has a `Print` method that takes a string.
+
+A type implements this interface by providing a method with the same name and parameters. For example, a `Console` type could implement the `Printer` interface like this:
+
+```go
+type Console struct {}
+
+func (c Console) Print(s string) {
+    fmt.Println(s)
+}
+
+```
+
+Now `Console` can be used wherever a `Printer` is expected because it fulfills the `Printer` interface.
+
+Interfaces are used to abstract behavior that multiple types might have in common, without needing to know the exact type. This is particularly useful for writing functions that can accept different types as long as they have certain methods:
+
+```go
+func PrintAll(p Printer, lines []string) {
+    for _, line := range lines {
+        p.Print(line)
+    }
+}
+
+```
+
+In this function, `p` can be any type as long as it implements the `Print` method of the `Printer` interface. This makes interfaces a powerful tool for achieving polymorphism and decoupling dependencies in Go.
