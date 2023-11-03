@@ -31,7 +31,7 @@ Go comes with many advantages over other languages for programming software.
 
 ### Variables && Constants
 
-Variables are declared with the `var` keyword and, constants are declared with `const` keyword in Go.
+Variables are declared with the `var` keyword and, constants are declared with the `const` keyword in Go.
 
 ### Data Types
 There are mainly 6 types of data in Go.
@@ -41,7 +41,7 @@ There are mainly 6 types of data in Go.
         - int16
         - int32
         - int64
-- uint (unsigned integrers (can't contain a minus sign))
+- uint (unsigned integers (can't contain a minus sign))
     - This is then further broken down into
         - uint8
         - uint16
