@@ -244,3 +244,42 @@ func PrintAll(p Printer, lines []string) {
 ```
 
 In this function, `p` can be any type as long as it implements the `Print` method of the `Printer` interface. This makes interfaces a powerful tool for achieving polymorphism and decoupling dependencies in Go.
+
+## Errors
+
+### The Error Interface
+In Go, errors are handled through a simple but powerful built-in interface known as the `error` interface. This interface is a central part of error handling in the Go language.
+
+The `error` interface is defined as follows:
+
+```go
+type error interface {
+    Error() string
+}
+
+```
+
+It consists of a single method, `Error()`, which returns a string. Any type that defines this method is said to satisfy the `error` interface, and can be used as an error.
+
+A typical way to create an error is by using the `errors.New()` function from the errors package, which accepts a string that describes the error:
+
+```go
+err := errors.New("The code broke. Please excuse the poor developers!")
+
+```
+
+This creates a new error object with the given message.
+
+In practice, functions often return an `error` value alongside the result value. The `error` value can be checked to see if an error occurred during the function call:
+
+```go
+result, err := someFunction()
+if err != nil {
+    // handle the error
+}
+
+```
+
+If `err` is `nil`, it means no error occurred and the function call was successful. Otherwise, the `err` object can provide information about what went wrong.
+
+Go's `error` interface provides a simple and consistent way to handle errors in the language, allowing developers to create robust and error-resilient software.
