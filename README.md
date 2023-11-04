@@ -283,3 +283,32 @@ if err != nil {
 If `err` is `nil`, it means no error occurred and the function call was successful. Otherwise, the `err` object can provide information about what went wrong.
 
 Go's `error` interface provides a simple and consistent way to handle errors in the language, allowing developers to create robust and error-resilient software.
+
+### The Errors Package
+
+The `errors` package in Go provides functions to manipulate errors. The primary function of interest is `errors.New()` which is used to create error messages. This function takes a string as an argument and returns an error that consists of the string wrapped into a basic `error` type.
+
+```go
+err := errors.New("An error occurred")
+```
+
+This creates an error with the message "An error occurred".
+
+Another functionality provided by the `errors` package is the `Is` function. This function is used to compare an error to a target error. It takes two arguments: the error and the target error, and returns a boolean representing whether the error is the same as the target error.
+
+```go
+if errors.Is(err, targetErr) {
+    // handle the error
+}
+```
+
+Lastly, the `errors` package provides the `As` function. This function is used to check whether an error is of a certain type. It takes two arguments: the error and a pointer to the target type. It returns a boolean representing whether the error is of the target type.
+
+```go
+var targetErr *MyError
+if errors.As(err, &targetErr) {
+    // handle the error
+}
+```
+
+Overall, the `errors` package in Go provides essential functions that help in creating, inspecting, and comparing errors.
