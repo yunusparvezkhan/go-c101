@@ -360,3 +360,42 @@ for i, v := range arr {
 In this example, `i` is the index, and `v` is the value at that index.
 
 Loops are a fundamental part of any programming language, and Go provides a flexible and powerful `for` loop construct that can handle any looping requirement.
+
+## Arrays
+
+Arrays in Go are a sequence of elements of a specific length. They're useful when planning to have a fixed number of elements of the same type. The size of the array is part of its type, meaning arrays of different sizes are considered as different types.
+
+Here's how you can declare an array:
+
+```go
+var arr [5]int
+
+```
+
+In the above example, `arr` is an array of five integers. By default, an array is zero-valued, which means the array of integers would be initialized with zeros.
+
+You can also initialize an array with values upon declaration:
+
+```go
+arr := [5]int{1, 2, 3, 4, 5}
+
+```
+
+To access or modify elements in the array, we use the index of the element. The index starts from zero.
+
+```go
+arr[0] = 10  // change the first element to 10
+fmt.Println(arr[1])  // print the second element
+
+```
+
+Go also provides a way to create arrays without specifying the size. It automatically figures out the size based on the number of elements. This is done by replacing the length with `...`:
+
+```go
+arr := [...]int{1, 2, 3, 4, 5}
+
+```
+
+Remember, arrays in Go are value types, not reference types. This means that when you assign an array to a new variable or pass an array to a function, a copy of the original array is actually being created and modified. To avoid this, you can use slices or array pointers.
+
+Arrays are useful when you want to store multiple items of the same type, especially when you know the exact number of items.
