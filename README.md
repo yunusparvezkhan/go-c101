@@ -312,3 +312,51 @@ if errors.As(err, &targetErr) {
 ```
 
 Overall, the `errors` package in Go provides essential functions that help in creating, inspecting, and comparing errors.
+
+## Loops
+Loops in the Go programming language are used to execute blocks of code repeatedly until a condition is met. Unlike many other languages, Go only has one looping construct: the `for` loop.
+
+The `for` loop can be used in a few different ways.
+
+- Basic loop: This is the most common type of loop, which resembles the syntax of loops in languages like C and Java.
+
+```go
+for i := 0; i < 10; i++ {
+    fmt.Println(i)
+}
+```
+
+In the above example, the loop will run as long as `i` is less than 10.
+
+- Conditional loop: This is a `for` loop without initial and post statements, and it resembles a `while` loop in other languages.
+
+```go
+i := 0
+for i < 10 {
+    fmt.Println(i)
+    i++
+}
+```
+
+In this example, the loop will continue as long as `i` is less than 10.
+
+- Infinite loop: This is a loop without a condition, and it will run forever unless stopped by a `break` statement or return from the enclosing function. This can be useful when the program needs to keep running until it's manually stopped.
+
+```go
+for {
+    fmt.Println("Infinite loop")
+}
+```
+
+- `For` loop with range: In Go, you can also loop over elements of an array, slice, string, or map, or values received on a channel using `for` loop with `range`.
+
+```go
+arr := []int{1, 2, 3, 4, 5}
+for i, v := range arr {
+    fmt.Printf("Index: %d, Value: %d\\n", i, v)
+}
+```
+
+In this example, `i` is the index, and `v` is the value at that index.
+
+Loops are a fundamental part of any programming language, and Go provides a flexible and powerful `for` loop construct that can handle any looping requirement.
