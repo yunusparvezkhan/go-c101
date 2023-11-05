@@ -475,3 +475,28 @@ s1 = append(s1, s2...)  // s1 is now []int{1, 2, 3, 4, 5, 6}
 ```
 
 Slices in Go are a dynamic and powerful tool that allows you to handle sequences of data efficiently. They are often used in Go where arrays would be used in other languages, due to their flexibility and ease of use.
+
+## Variadic Functions
+
+Variadic functions are a type of function in Go that can be called with any number of trailing arguments. For instance, `fmt.Println` is a common variadic function.
+
+To create a variadic function, you can declare a function with the last parameter having the `...<type>` format. The type here is the type of the arguments that you want to use in the variadic function.
+
+Here is an example of a variadic function:
+
+```go
+func sum(nums ...float64) {
+    fmt.Print(nums, " ")
+    var total float64
+    for _, num := range nums {
+        total += num
+    }
+    fmt.Println(total)
+}
+```
+
+You can call this function with any number of `float64` arguments like `sum(1, 2)`, or `sum(1, 2, 3, 4, 5)`, or ofcourse `sum(1.2, 2.4, 5.56, 7.62)`.
+
+Inside the function, the `nums` parameter is equivalent to a slice of the declared type. So in the `sum` function example, `nums` is equivalent to a slice of float64s, `[]float64`.
+
+Variadic functions are handy when you don't know the number of arguments a function should take, such as when you're handling `fmt.Println` or string formatting functions.
