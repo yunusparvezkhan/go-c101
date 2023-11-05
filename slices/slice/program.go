@@ -16,7 +16,7 @@ func getMessageWithRetriesForPlan(plan string) ([]string, error) {
 		return allMessages[0:2], nil
 	}
 	if plan == planPro {
-		return allMessages[0:], nil
+		return allMessages[:], nil
 	}
 	return []string{}, errors.New("Unsupported plan")
 }
