@@ -12,10 +12,10 @@ const (
 
 func getMessageWithRetriesForPlan(plan string) ([]string, error) {
 	allMessages := getMessageWithRetries()
-	if plan == "free" {
+	if plan == planFree {
 		return allMessages[0:2], nil
 	}
-	if plan == "pro" {
+	if plan == planPro {
 		return allMessages[0:], nil
 	}
 	return []string{}, errors.New("Unsupported plan")
