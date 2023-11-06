@@ -500,3 +500,4 @@ You can call this function with any number of `float64` arguments like `sum(1, 2
 Inside the function, the `nums` parameter is equivalent to a slice of the declared type. So in the `sum` function example, `nums` is equivalent to a slice of float64s, `[]float64`.
 
 Variadic functions are handy when you don't know the number of arguments a function should take, such as when you're handling `fmt.Println` or string formatting functions.
+
