@@ -476,6 +476,41 @@ s1 = append(s1, s2...)  // s1 is now []int{1, 2, 3, 4, 5, 6}
 
 Slices in Go are a dynamic and powerful tool that allows you to handle sequences of data efficiently. They are often used in Go where arrays would be used in other languages, due to their flexibility and ease of use.
 
+### Slice of Slices
+
+In Go, it's also possible to have a slice that contains other slices. This is known as a slice of slices.
+
+A slice of slices can be created like this:
+
+```go
+ss := [][]int{
+    []int{1, 2, 3},
+    []int{4, 5, 6},
+    []int{7, 8, 9},
+}
+
+```
+
+In this example, `ss` is a slice that contains three slices of integers.
+
+You can access the elements in a slice of slices using multiple indices:
+
+```go
+fmt.Println(ss[0][1])  // prints "2"
+
+```
+
+In this case, `ss[0][1]` accesses the second element in the first slice.
+
+You can also modify elements in the same way:
+
+```go
+ss[0][1] = 20  // changes the second element in the first slice to 20
+
+```
+
+Slice of slices are often used to represent two-dimensional data, like a matrix or a game board. They provide a flexible and dynamic way to work with this kind of data.
+
 ## Variadic Functions
 
 Variadic functions are a type of function in Go that can be called with any number of trailing arguments. For instance, `fmt.Println` is a common variadic function.
