@@ -536,3 +536,87 @@ Inside the function, the `nums` parameter is equivalent to a slice of the declar
 
 Variadic functions are handy when you don't know the number of arguments a function should take, such as when you're handling `fmt.Println` or string formatting functions.
 
+## Maps in Go
+
+Maps in Go are powerful data structures that associate keys and values. They are similar to dictionaries in Python or objects in JavaScript.
+
+A map is declared by using the `map` keyword, followed by the key type in square brackets and then the value type. For example, a map with string keys and integer values is declared as follows:
+
+```go
+var m map[string]int
+
+```
+
+To create a map, you can use the built-in `make` function:
+
+```go
+m := make(map[string]int)
+
+```
+
+To add elements to the map, use the following syntax:
+
+```go
+m["key1"] = 10
+m["key2"] = 20
+
+```
+
+To access the values in a map, you use the key:
+
+```go
+value1 := m["key1"] // value1 is 10
+
+```
+
+You can also check if a key exists in the map:
+
+```go
+value, exists := m["key3"] // value is 0 and exists is false
+
+```
+
+To delete a key from the map, use the `delete` built-in function:
+
+```go
+delete(m, "key1")
+
+```
+
+Maps are a powerful tool in Go to associate related data together. However, it is important to note that maps are not safe for concurrent use. If you need to read and write to a map from multiple goroutines, you will need to ensure that the map is safely accessed, for instance by using a mutex.
+
+While adding elements to a map or accessing them is straightforward, iterating over a map requires using the `range` keyword. The order of retrieval for maps is not guaranteed, as Go does not order the map's elements internally.
+
+Here's how you can iterate over a map:
+
+```go
+for key, value := range m {
+    fmt.Printf("Key: %s, Value: %d\\n", key, value)
+}
+
+```
+
+In this loop, `key` and `value` are the key-value pair for each element in the map.
+
+Go also provides a way to check if a specific key exists in the map. When accessing an element of a map, you can receive two values instead of one. The second value is a boolean that is `true` if the key exists in the map, and `false` if not:
+
+```go
+value, exists := m["key2"]
+if exists {
+    fmt.Println("Value:", value)
+} else {
+    fmt.Println("Key does not exist")
+}
+
+```
+
+This feature prevents the common mistake of accessing a map with a key that does not exist.
+
+Finally, you can find the number of key-value pairs in a map using the built-in `len` function:
+
+```go
+fmt.Println(len(m)) // prints the number of pairs in the map
+
+```
+
+Maps are a powerful and flexible tool in Go, allowing you to organize data for efficient retrieval, modification, and deletion.
