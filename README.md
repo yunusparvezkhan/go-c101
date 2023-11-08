@@ -678,3 +678,64 @@ people["John"] = Person{Name: "John", Age: 30}
 ```
 
 In this example, `people` is a map where each value is a `Person` struct.
+
+### Nested Maps
+
+Nested maps in Go are essentially maps that contain other maps as their values. They offer a way to create more complex, multi-dimensional data structures.
+
+To create a nested map, you need to declare the type of the inner map when you declare the outer map:
+
+```go
+nestedMap := make(map[string]map[string]int)
+```
+
+In this example, `nestedMap` is a map whose keys are strings and values are maps of string keys and integer values.
+
+However, when you initialize a nested map like this, only the outer map is initialized. If you try to add a key-value pair to the inner map, you'll encounter a runtime error because the inner map is `nil`. You need to initialize the inner map before you can add values to it:
+
+```go
+if nestedMap["key1"] == nil {
+    nestedMap["key1"] = make(map[string]int)
+}
+nestedMap["key1"]["key2"] = 1
+```
+
+In this case, before adding the value `1` with the key `"key2"` to the inner map, we first check if the inner map at `"key1"` in the outer map is `nil`. If it is, we initialize it with `make(map[string]int)`.
+
+You can access the elements in a nested map using the keys for the outer and inner maps:
+
+```go
+fmt.Println(nestedMap["key1"]["key2"]) // prints "1"
+```
+
+Nested maps are a powerful feature in Go that allow you to store and organize data in a multi-dimensional structure.
+
+To delete a key-value pair from the inner map, you can use the `delete` built-in function similarly to how you would in a single-dimension map:
+
+```go
+delete(nestedMap["key1"], "key2")
+```
+
+This will remove the key `"key2"` and its associated value from the inner map at `"key1"` in the outer map.
+
+If you want to delete an entire inner map (and all the key-value pairs within it), you can do so by deleting the key from the outer map:
+
+```go
+delete(nestedMap, "key1")
+```
+
+This will remove the key `"key1"` and its associated inner map from `nestedMap`.
+
+Iterating over a nested map involves using nested `for` loops. The outer loop iterates over the outer map, and the inner loop iterates over each inner map:
+
+```go
+for outerKey, innerMap := range nestedMap {
+    for innerKey, value := range innerMap {
+        fmt.Printf("OuterKey: %s, InnerKey: %s, Value: %d\\n", outerKey, innerKey, value)
+    }
+}
+```
+
+In this loop, `outerKey` is the key from the outer map, `innerKey` is the key from the inner map, and `value` is the value from the inner map.
+
+Nested maps in Go provide a way to create complex, multi-dimensional data structures. It's important to remember to initialize both the outer and inner maps before use, and that you can use all the regular map functions like `delete` and `range` with both levels of the map.
