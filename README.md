@@ -620,3 +620,33 @@ fmt.Println(len(m)) // prints the number of pairs in the map
 ```
 
 Maps are a powerful and flexible tool in Go, allowing you to organize data for efficient retrieval, modification, and deletion.
+
+### Key types
+
+In Go, the types of keys used in maps can be quite versatile. However, not all types are permitted. The key type of a map can be any type that is comparable, meaning the values of that type can be checked for equality using the `==` operator.
+
+For instance, you can use simple types such as `int`, `float64`, `complex128`, `bool`, and `string` as key types. This includes all numeric types, boolean, and string types.
+
+Struct types where all fields are comparable are also allowed as key types. This means that you could have a map where each key is a struct, as long as every field in the struct is of a comparable type.
+
+```go
+type Key struct {
+    Field1, Field2 int
+}
+
+m := make(map[Key]string)
+
+```
+
+In this example, `Key` is a struct type with two fields, both of type `int`. It is a valid key type for a map.
+
+However, there are some limitations. Slices, maps, and other functions are not allowed as key types, because equality is not defined on those types. Therefore, the following code is invalid:
+
+```go
+m := make(map[[]int]string)  // compile error: slice cannot be used as map key
+
+```
+
+In this example, `[]int` is a slice type, which is not allowed as a map key type.
+
+In summary, Go gives a lot of flexibility in choosing the types of keys in maps, but with some limitations. As long as the type is comparable (i.e., can be checked for equality), it can be used as a key type in a map.
