@@ -650,3 +650,31 @@ m := make(map[[]int]string)  // compile error: slice cannot be used as map key
 In this example, `[]int` is a slice type, which is not allowed as a map key type.
 
 In summary, Go gives a lot of flexibility in choosing the types of keys in maps, but with some limitations. As long as the type is comparable (i.e., can be checked for equality), it can be used as a key type in a map.
+
+### Value Types
+
+In Go, the value types of a map can be any valid Go data type. They can range from simple types like integers and strings, to more complex types like slices, structs, and even other maps. This provides a lot of flexibility for storing complex data structures in your map.
+
+For example, you can create a map where the values are slices:
+
+```go
+m := make(map[string][]int)
+m["numbers"] = []int{1, 2, 3, 4, 5}
+```
+
+In this example, `m` is a map where each value is a slice of integers.
+
+You can also create a map where the values are structs:
+
+```go
+type Person struct {
+    Name string
+    Age  int
+}
+
+people := make(map[string]Person)
+people["John"] = Person{Name: "John", Age: 30}
+
+```
+
+In this example, `people` is a map where each value is a `Person` struct.
