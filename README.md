@@ -743,11 +743,10 @@ Nested maps in Go provide a way to create complex, multi-dimensional data struct
 ## FIrst Class Functions
 
 ### Introduction
-
 First-class functions, also known as first-class citizens or first-class objects, are a fundamental concept in computer science and programming languages. The term "first-class" refers to the treatment of a particular entity (in this case, functions) as having the same rights and capabilities as other entities like variables, data types, or objects. In the context of functions, this means that functions are treated as first-class citizens, and they can be used in the same way as any other data type is used. 
 
-### Key features of First Class Functions
 
+### Key features of First Class Functions
 Here are the key characteristics of first-class functions:
 
 1. Functions as Values: First-class functions treat functions as values. This means that you can assign functions to variables.
@@ -758,4 +757,6 @@ Here are the key characteristics of first-class functions:
 
 1. Functions as Return Values: Functions can be returned as results from other functions. This is often referred to as function composition or closure. The returned function can capture the state or context of the enclosing function.
 
+
+### More about the technology
 First-class functions are a key feature of many modern programming languages, including JavaScript, Python, Go, and functional programming languages like Lisp, Scheme, and Haskell. They enable more flexible and expressive programming paradigms, such as functional programming, and allow for the development of higher-order functions and more modular, reusable code.
