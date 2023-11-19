@@ -844,3 +844,9 @@ In programming languages, a higher-order function is a function that can do at l
 In essence, a higher-order function treats functions as first-class citizens, allowing them to be manipulated and used in the same way as other data types, such as integers, strings, or arrays.
 
 Higher-order functions are a key concept in functional programming. The use of higher-order functions can lead to more modular, reusable, and expressive code. Examples of higher-order functions include `map`, `filter`, and `reduce` in functional programming languages. These functions take other functions as arguments to perform operations on data or return new functions with specific behavior.
+
+## Higher-Order Functions in Go Programming Language
+
+As we have already seen, Go treats functions as like any other data type, making them First-Class Functions, in which functions as a parameter and functions as return values are key features, so Go definitely has Higher-Order Functions. 
+
+Functions which either takes another function(s) as argument(s) or returns one or more function(s) as return values, are called Higher-Order Functions in Go Programming Language.
