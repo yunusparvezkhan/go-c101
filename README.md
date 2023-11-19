@@ -766,3 +766,14 @@ First-class functions are a key feature of many modern programming languages, in
 
 As already written in the previous paragraph, First Class Functions are a key feature of many programming languages including Go, in this section we will deep dive into the applications of First-Class Functions in Go, following the features mentioned above.
 
+### Function Declaration
+
+Functions in Go can be declared and defined like any other variable, treating them as entities that can be named, invoked, and manipulated.
+
+```go
+func add(a, b int) int {
+    return a + b
+}
+```
+
+Now with that piece of information, the notion of the assignment of functions to variables comes into the picture. We can do that following this method, in addition to the code block above.
