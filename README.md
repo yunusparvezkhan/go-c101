@@ -834,3 +834,13 @@ double := multiplier(2)
 result := double(5) // result is 10
 ```
 
+## Higher-Order Functions
+
+In programming languages, a higher-order function is a function that can do at least one of the following:
+
+1. **Accept Another Function as an Argument (Function as a Parameter):** The higher-order function takes one or more functions as arguments. This is often referred to as "passing functions as parameters."
+2. **Return a Function as a Result:** The higher-order function can return another function as its result. This is sometimes known as "returning functions from functions" or creating closures.
+
+In essence, a higher-order function treats functions as first-class citizens, allowing them to be manipulated and used in the same way as other data types, such as integers, strings, or arrays.
+
+Higher-order functions are a key concept in functional programming. The use of higher-order functions can lead to more modular, reusable, and expressive code. Examples of higher-order functions include `map`, `filter`, and `reduce` in functional programming languages. These functions take other functions as arguments to perform operations on data or return new functions with specific behavior.
