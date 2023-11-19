@@ -740,7 +740,7 @@ In this loop, `outerKey` is the key from the outer map, `innerKey` is the key fr
 
 Nested maps in Go provide a way to create complex, multi-dimensional data structures. It's important to remember to initialize both the outer and inner maps before use, and that you can use all the regular map functions like `delete` and `range` with both levels of the map.
 
-## FIrst Class Functions
+## First Class Functions
 
 ### Introduction
 First-class functions, also known as first-class citizens or first-class objects, are a fundamental concept in computer science and programming languages. The term "first-class" refers to the treatment of a particular entity (in this case, functions) as having the same rights and capabilities as other entities like variables, data types, or objects. In the context of functions, this means that functions are treated as first-class citizens, and they can be used in the same way as any other data type is used. 
@@ -806,3 +806,4 @@ var operations []operationFunc{
 result1 := operations[0](3, 4) // result1 is 7 (addition)
 result2 := operations[1](8, 5) // result2 is 3 (subtraction)
 ```
+
