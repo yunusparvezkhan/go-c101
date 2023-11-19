@@ -782,3 +782,27 @@ Now with that piece of information, the notion of the assignment of functions to
 addFunc := add
 result := addFunc(3, 4) // result is now 7
 ```
+
+### Storing functions in Data Structures
+
+As we have discussed one of the key features of First-Class Functions is that they can be stored in data structures (i.e. Arrays, Slices, Structs, etc.), here’s how a simple code of storing functions in slices looks like, in addition to previous two code blocks.
+
+```go
+// Define another function to store in a slice
+func subtractFunc(a, b int) int {
+    return a - b
+}
+
+// Define a function type
+type operationFunc func(int, int) int
+
+// Create a slice of function type
+var operations []operationFunc{
+	addFunc,
+	subtractFunc
+}
+
+// Use the functions from the slice
+result1 := operations[0](3, 4) // result1 is 7 (addition)
+result2 := operations[1](8, 5) // result2 is 3 (subtraction)
+```
