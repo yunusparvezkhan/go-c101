@@ -762,6 +762,7 @@ Here are the key characteristics of first-class functions:
 First-class functions are a key feature of many modern programming languages, including JavaScript, Python, Go, and functional programming languages like Lisp, Scheme, and Haskell. They enable more flexible and expressive programming paradigms, such as functional programming, and allow for the development of higher-order functions and more modular, reusable code.
 
 
-### First Class Functions in Go Programming Language
+## First Class Functions in Go Programming Language
 
-As already written in the previous paragraph, First Class Functions are a key feature of many programming languages including Go, in this sub-section we will deep dive into the applications of First-Class Functions in Go, following the features mentioned above.
+As already written in the previous paragraph, First Class Functions are a key feature of many programming languages including Go, in this section we will deep dive into the applications of First-Class Functions in Go, following the features mentioned above.
+
