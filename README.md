@@ -847,6 +847,6 @@ Higher-order functions are a key concept in functional programming. The use of h
 
 ## Higher-Order Functions in Go Programming Language
 
-As we have already seen, Go treats functions as like any other data type, making them First-Class Functions, in which functions as a parameter and functions as return values are key features, so Go definitely has Higher-Order Functions. 
+As we have already seen, Go treats functions like any other data type, making them First-Class Functions, in which functions as a parameter and functions as return values are key features, so Go definitely has Higher-Order Functions. 
 
-Functions which either takes another function(s) as argument(s) or returns one or more function(s) as return values, are called Higher-Order Functions in Go Programming Language.
+Functions that either take another function(s) as argument(s) or return one or more function(s) as return values are called Higher-Order Functions in Go Programming Language.
