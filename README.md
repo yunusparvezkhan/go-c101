@@ -819,3 +819,18 @@ func operate(operation func(int, int) int, a, b int) int {
 sum := operate(add, 3, 4) // sum is 7
 ```
 
+### Passing Functions as Return values
+
+We know, as First-Class Functions can be passed as arguments to other functions, a function can also return a function as a return value. The following code is an example of that.
+
+```go
+func multiplier(factor int) func(int) int {
+    return func(x int) int {
+        return x * factor
+    }
+}
+
+double := multiplier(2)
+result := double(5) // result is 10
+```
+
