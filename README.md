@@ -807,3 +807,15 @@ result1 := operations[0](3, 4) // result1 is 7 (addition)
 result2 := operations[1](8, 5) // result2 is 3 (subtraction)
 ```
 
+### Passing Functions as Parameters
+
+As another feature of First-Class Functions, Go also supports its functions to be passed as parameters to other functions, facilitating the creation of higher-order functions.
+
+```go
+func operate(operation func(int, int) int, a, b int) int {
+    return operation(a, b)
+}
+
+sum := operate(add, 3, 4) // sum is 7
+```
+
