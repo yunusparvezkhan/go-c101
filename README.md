@@ -777,3 +777,8 @@ func add(a, b int) int {
 ```
 
 Now with that piece of information, the notion of the assignment of functions to variables comes into the picture. We can do that following this method, in addition to the code block above.
+
+```go
+addFunc := add
+result := addFunc(3, 4) // result is now 7
+```
