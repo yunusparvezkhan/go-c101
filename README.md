@@ -850,3 +850,57 @@ Higher-order functions are a key concept in functional programming. The use of h
 As we have already seen, Go treats functions like any other data type, making them First-Class Functions, in which functions as a parameter and functions as return values are key features, so Go definitely has Higher-Order Functions. 
 
 Functions that either take another function(s) as argument(s) or return one or more function(s) as return values are called Higher-Order Functions in Go Programming Language.
+
+## Defer in Go
+
+In Go, the `defer` statement is used to ensure that a function call is performed later in a program's execution, usually for purposes of cleanup or finalization. The deferred function call is placed onto a stack, and the function will be executed when the surrounding function completes, whether it does so normally or due to a panic.
+
+Here's a basic example to illustrate the concept:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Start")
+
+    // The function call will be deferred until the surrounding function (main) completes
+    defer cleanup()
+
+    fmt.Println("End")
+}
+
+func cleanup() {
+    fmt.Println("Performing Cleanup")
+}
+```
+
+In this example, the output will be:
+
+```bash
+Start
+End
+Performing Cleanup
+```
+
+As the **`cleanup`** function is called with **`defer`**, it executes after the surrounding function **`main`** has completed.
+
+Common use cases for **`defer`** include:
+
+1. **Resource Cleanup:** Closing files, releasing locks, or closing network connections to ensure that resources are properly released.
+2. **Function Call Logging:** Logging the entry and exit of functions for debugging or profiling purposes.
+3. **Unlocking Mutexes:** Ensuring that a mutex is always unlocked, even if an error occurs.
+    
+    ```go
+    var mu sync.Mutex
+    
+    func foo() {
+        mu.Lock()
+        defer mu.Unlock() // Ensure the mutex is always unlocked
+        // ... rest of the function
+    }
+    ```
+    
+
+**`defer`** statements are executed in a last-in, first-out (LIFO) order. The arguments to the deferred function are evaluated when the  statement is encountered, not when the function is executed. This can sometimes lead to subtle behaviors, so it's important to understand the timing of  execution in Go.
