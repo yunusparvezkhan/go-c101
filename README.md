@@ -904,3 +904,75 @@ Common use cases for **`defer`** include:
     
 
 **`defer`** statements are executed in a last-in, first-out (LIFO) order. The arguments to the deferred function are evaluated when the  statement is encountered, not when the function is executed. This can sometimes lead to subtle behaviors, so it's important to understand the timing of  execution in Go.
+
+
+
+## Closures in Go
+
+In Go, closures are created when you have a function that references variables from outside its own function body. The closure "closes over" these variables, capturing their values and allowing the function to access and manipulate them even after the outer function has finished execution. This is similar to closures in other programming languages.
+
+Here's an example in Go to illustrate closures:
+
+```go
+package main
+
+import "fmt"
+
+func outerFunction(x int) func(int) int {
+    // The inner function is a closure because it "closes over" the variable x
+    return func(y int) int {
+        return x + y
+    }
+}
+
+func main() {
+    // Create a closure by invoking outerFunction
+    closure := outerFunction(10)
+
+    // Use the closure with an argument
+    result := closure(5) // result is 15
+
+    fmt.Println(result)
+}
+```
+
+In this example:
+
+- **`outerFunction`** returns an anonymous function (a closure) that takes an argument **`y`** and adds it to the variable **`x`** from the outer function's scope (argument/parameter/input).
+- The returned function captures and "closes over" the variable **`x`**, allowing it to remember the value of **`x`** when it was created.
+- When **`outerFunction(10)`** is invoked, it creates a closure with **`x`** set to 10.
+- The closure, stored in the variable **`closure`**, is then invoked with an argument of 5, resulting in **`10 + 5`**, which is 15.
+
+Closures in Go have some notable characteristics:
+
+1. **Lexical Scoping:** Closures in Go follow lexical scoping rules, meaning they capture variables from the surrounding lexical scope.
+2. **Reference Semantics:** Closures capture variables by reference, not by value. This means if the variables outside the closure change, those changes are reflected inside the closure.
+3. **Function Factories:** Closures are commonly used in Go for creating function factories, where a function returns another function customized with specific parameters.
+
+Here's another example demonstrating a closure used as a function factory:
+
+```go
+package main
+
+import "fmt"
+
+func multiplier(factor int) func(int) int {
+    return func(x int) int {
+        return x * factor
+    }
+}
+
+func main() {
+    // Create closures with different factors
+    makeDouble := multiplier(2)
+    makeTriple := multiplier(3)
+
+    // Use the closures
+    result1 := makeDouble(5) // result1 is 10
+    result2 := makeTriple(4) // result2 is 12
+
+    fmt.Println(result1, result2)
+}
+```
+
+In this example, **`multiplier`** is a function that returns a closure. The closures (**`makeDouble`** and **`makeTriple`**) remember the factor they were created with, allowing them to multiply their argument by that factor. This is a common pattern in Go for creating & generating flexible and reusable functions.
