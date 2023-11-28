@@ -976,3 +976,79 @@ func main() {
 ```
 
 In this example, **`multiplier`** is a function that returns a closure. The closures (**`makeDouble`** and **`makeTriple`**) remember the factor they were created with, allowing them to multiply their argument by that factor. This is a common pattern in Go for creating & generating flexible and reusable functions.
+
+
+## Anonymous Functions
+
+In Go, anonymous functions, also known as function literals or lambda functions, are functions that are defined without a name directly in the code. They are often used for short-term or one-off operations, especially when you need a function as an argument to another function, like in the case of higher-order functions or closures.
+
+Here's a basic example of an anonymous function in Go:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // Define and immediately invoke an anonymous function
+    result := func(x, y int) int {
+        return x + y
+    }(3, 4)
+
+    fmt.Println(result) // Output: 7
+}
+```
+
+In this example:
+
+- The anonymous function **`(func(x, y int) int { return x + y })`** takes two integer parameters **`x`** and **`y`** and returns their sum.
+- The function is immediately invoked with the arguments **`(3, 4)`**.
+- The result is assigned to the variable **`result`** and printed.
+
+Anonymous functions are often used in scenarios such as:
+
+1. **As Arguments to Higher-Order Functions:**
+    
+    ```go
+    numbers := []int{1, 2, 3, 4, 5}
+    result := filter(numbers, func(x int) bool {
+        return x%2 == 0
+    })
+    ```
+    
+2. **Closures:**
+    
+    ```go
+    func multiplier(factor int) func(int) int {
+        return func(x int) int {
+            return x * factor
+        }
+    }
+    ```
+    
+3. **Deferred Execution:**
+    
+    ```go
+    defer func() {
+        fmt.Println("Cleanup")
+    }()
+    ```
+    
+4. **Concurrent Operations:**
+    
+    ```go
+    go func() {
+        // concurrent code here
+    }()
+    ```
+    
+5. **Event Handling:**
+    
+    ```go
+    button.OnClick(func() {
+        fmt.Println("Button Clicked!")
+    })
+    ```
+    
+
+Anonymous functions have access to variables from the enclosing scope, and they can form closures by capturing and referencing these variables. This flexibility makes them useful for concise and expressive code, especially in situations where you need to define a small piece of logic without creating a separate named function.
