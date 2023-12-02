@@ -6,6 +6,9 @@ import (
 )
 
 func removeProfanity(message *string) {
+	if message == nil {
+		return
+	}
 	messageVal := *message
 	messageVal = strings.ReplaceAll(messageVal, "dang", "****")
 	messageVal = strings.ReplaceAll(messageVal, "shoot", "*****")
@@ -21,18 +24,23 @@ func test(messages []string) {
 }
 
 func main() {
-	messages1 := []string{
+	messages := []string{
 		"well shoot, this is awful",
+		"",
 		"dang robots",
 		"dang them to heck",
+		"",
 	}
 
 	messages2 := []string{
 		"well shoot",
+		"",
 		"Allan is going straight to heck",
 		"dang... that's a tough break",
+		"",
 	}
 
-	test(messages1)
+	test(messages)
 	test(messages2)
+
 }
