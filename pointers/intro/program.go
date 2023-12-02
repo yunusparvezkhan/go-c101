@@ -10,7 +10,7 @@ func removeProfanity(message *string) {
 	messageVal = strings.ReplaceAll(messageVal, "dang", "****")
 	messageVal = strings.ReplaceAll(messageVal, "shoot", "*****")
 	messageVal = strings.ReplaceAll(messageVal, "heck", "****")
-	fmt.Println(messageVal)
+	*message = messageVal
 }
 
 func test(messages []string) {
